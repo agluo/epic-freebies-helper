@@ -50,7 +50,7 @@ jobs:
       # 增加 GITHUB_TOKEN 以降低 Camoufox 下载时的 403 频率限制。
       # 即使这里失败，运行时也可以回退到 Playwright Firefox。
       - name: Install Camoufox
-        continue-on-error: true
+        continue-on-error: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: uv run camoufox fetch
